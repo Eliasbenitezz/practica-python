@@ -1,32 +1,36 @@
-import random
+import random 
 import os
-palabras = ["universidad","computadora","impresora","escritorio"]
-
-palabra_random = random.choice(palabras)
-
-palabra_secreta = ["_"] * len(palabra_random)
-
+palabra = random.choice(["universidad","odontologia"])
+palabra_oculta =["-"] * len(palabra)
 intentos = 8
 
-while intentos > 0 and "_" in palabra_secreta:
-    print (" ".join(palabra_secreta))
-    print (f"Te quedan {intentos} intentos.") 
+while intentos > 0 and "-" in palabra_oculta:
+    print(f"Te quedan {intentos} Intentos. ") 
     
-    letra_usuario = input("Ingrese una letra: ").lower()
+    print("".join(palabra_oculta)) 
+    
+    Letra_usuario = input("Ingrese una letra: ").lower()
+    
+    cantidad_de_letras = len(Letra_usuario)
 
-    if letra_usuario in palabra_random:
-        for p, l in enumerate(palabra_random):
-            if l == letra_usuario:
-                palabra_secreta[p] = letra_usuario
-        print ("Correcto!.")
-        input("Enter para continuar.")
-        os.system("cls")
-    else:
+    if Letra_usuario == palabra:
+        break
+    elif Letra_usuario in palabra:
+        for I, L in enumerate(palabra):
+            if L == Letra_usuario:
+                palabra_oculta[I] = L
+        print("Felicidades haz adivinado")
+    elif cantidad_de_letras == 0:
         intentos -= 1
-        print("Lo siento esa letra no esta en la palabra.")
-        input("Enter para continuar.")
-        os.system("cls")
-if "_" in palabra_secreta:
-    print(f"Te quedaste sin Intentos.\n\nLa palabra era: {palabra_random}")
+        print(f"Lo siento {Letra_usuario} no esta en la palabra")
+    elif cantidad_de_letras > 0:
+        intentos -= 1
+        print(f"Lo siento {Letra_usuario} no es la palabra")
+           
+    input("Enter para continuar")
+    os.system("cls")
+
+if intentos == 0:
+    print(f"Haz perdido, te quedaste sin intentos la palabra era {palabra}")
 else:
-    print(f"Felicidades, adivinaste la palabra: {palabra_random}\nY te sobraron {intentos} intetos")  
+    print(f"Haz ganado, la palabra era {palabra}") 
