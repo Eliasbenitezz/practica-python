@@ -4,7 +4,7 @@ import random
 import time
 import os 
 
-SO = pathlib('C:\Windows\System32')
+SO = pathlib.Path('C:\Windows\System32')
 
 def limpiar ():
     if os.name == 'nt':
