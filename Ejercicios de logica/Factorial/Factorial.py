@@ -5,4 +5,4 @@ def factorial(n):
             factorial *= i 
     return factorial
 
-print(factorial(5))  # Salida esperada: 120 
+print(factorial(5))
