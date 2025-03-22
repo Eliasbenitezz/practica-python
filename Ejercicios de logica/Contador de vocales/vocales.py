@@ -1,11 +1,8 @@
 def contar_vocales(texto):
-    VOCALES = ['A', 'E', 'I', 'O', 'U',
-    'a', 'e', 'i', 'o', 'u',
-    'Á', 'É', 'Í', 'Ó', 'Ú',
-    'á', 'é', 'í', 'ó', 'ú']
+    vocales = 'aeiouáéíóú'
     numeros_de_vocales = 0
     for i in texto:
-        if i in VOCALES:
+        if i in vocales.upper() or i in vocales.lower():
             numeros_de_vocales += 1
     
     return numeros_de_vocales
