@@ -1,63 +1,31 @@
+import os 
 import random
-import os
 
-#Numero a adivinar 
-numero_aleatorio = random.randint(1,101)
+def clear_screen():
+    """"Clear the console screen."""
+    os.system('cls' if os.name == 'nt' else 'clear') 
 
+def get_ramdom_number():
+    """Generate a ramdom number between 1 and 100"""
+    return random.randint(1, 100)
 
-#Numeros de intentos 
-intentos = 8
+def get_user_input():
+    """Get user input and validate it"""
+    while True:
+        try:
+            user_number = int(input("Adivina el numero del 1 al 100: "))
+            if 1 <= user_number <= 100:
+                return user_number
+            else:
+                print("El numero debe estar entre 1 y 100.")
+        except ValueError:
+            print("Por favor ingrese solo numeros enteros.")
 
-'''funcion para limpiar la terminal 
-Ya sea Windows, Linux o MacOs'''
-
-def limpiar ():
-    input("Enter para continuar.")
+def play_game():
+    """Main function to play the game"""
+    clear_screen()
+    print("Bienvenido al juego de adivina el numero!")
+    ramdom_number = get_ramdom_number()
+    attempts = 0 
     
-    if os.name == 'nt':
-        os.system('cls')   #Windows 
-    else:
-        os.system('clear') #Linux y MacOS 
-        
-'''Función para comprobar los distintos casos 
-y retorna True o False para que el juego siga o no'''
-
-def comprobacion(num):
-    global intentos    
     
-    if intentos == 0:
-        print (f"Te quedaste sin intentos el numero es {num}")
-        return True
-            
-    elif num == numero_usuario:
-        print(f"Felicidades el numero era {num}")
-        return True
-    
-    elif numero_usuario < num:
-        intentos -= 1
-        print(f'Te quedas corto el numero es mayor a {numero_usuario}'
-              f'\nTe quedan {intentos} intentos')
-        return False
-    
-    elif numero_usuario > num:
-        intentos -= 1
-        print(f'Te fuiste muy arriba el numero es menor a {numero_usuario}'
-              f'\nTe quedan {intentos} intentos')
-        return False        
-
-#Le damos un valor a numero de usuario para el manejo de error        
-numero_usuario = None
-
-while numero_usuario is None:
-    try:
-            
-        numero_usuario = int(input('Elige tu numero de 1 al 100: '))
-        
-    except ValueError:
-            
-        print("Por favor ingresa solo números.")        
-        limpiar()
-    
-
-while not comprobacion(numero_aleatorio):
-    pass 
