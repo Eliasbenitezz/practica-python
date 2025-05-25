@@ -36,7 +36,7 @@ limpiar()
 while True:
 
     categoria = input(f"Su Sueldo ahora mismo es de {sueldo:,.2f} Guaranies\n"
-                      "Si es Gasto ingrese 'G' \nY si es Ingreso ingrese 'I': ").upper()
+                      "Si es Gasto ingrese 'G' \nY si es Ingreso ingrese 'I' \nPara ver el saldo 'S': ").upper()
     limpiar()
     
     if categoria == 'G':
@@ -50,7 +50,10 @@ while True:
         ingreso(monto)
         input("Enter para continuar.") 
         limpiar()
-    
+    elif categoria == 'S':
+        print(f"Su saldo es de {sueldo}")
+        input("Enter para continuar.")
+        limpiar()
     else:
         print("Ingrese solo 'G' para gasto\n'I' para ingreso\n'S' para ver tu saldo: ")
         input("Enter para continuar.") 
