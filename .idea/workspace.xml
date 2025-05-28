@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45cbdbd1-9bb9-4418-b9bf-a4a813437f9a" name="Changes" comment="" />
+    <list default="true" id="45cbdbd1-9bb9-4418-b9bf-a4a813437f9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Mini juegos/Adivina el numero/adivina_numero.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mini juegos/Adivina el numero/adivina_numero.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,17 +22,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.adivina_numero.executor": "Run",
     "Python.ahorcados.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/gamer/practica-python"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/gamer/practica-python",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-PY-251.25410.159" />
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
       </set>
     </attachedChunks>
   </component>
@@ -42,7 +49,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742424129863</updated>
+      <workItem from="1748401462375" duration="177000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/practica_python$adivina_numero.coverage" NAME="adivina_numero Coverage Results" MODIFIED="1748401611928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Mini juegos/Adivina el numero" />
   </component>
 </project>

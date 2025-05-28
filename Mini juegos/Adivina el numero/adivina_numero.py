@@ -1,31 +1,49 @@
 import os 
 import random
 
-def clear_screen():
-    """"Clear the console screen."""
-    os.system('cls' if os.name == 'nt' else 'clear') 
+def limpiar():
+    os.system('cls' if os.name=='nt' else 'clear')
+    
+def intentos():
+    vida = 8
+    return vida
 
-def get_ramdom_number():
-    """Generate a ramdom number between 1 and 100"""
-    return random.randint(1, 100)
+def numero_random():
+    num_random = random.randint(1,100)
+    return num_random
 
-def get_user_input():
-    """Get user input and validate it"""
+def numero_usuario():
     while True:
         try:
-            user_number = int(input("Adivina el numero del 1 al 100: "))
-            if 1 <= user_number <= 100:
-                return user_number
+            num_usuario = int(input('Ingrese un número del 1 al 100: '))
+            limpiar()
+            if 1 <= num_usuario <=100:
+                return num_usuario
             else:
-                print("El numero debe estar entre 1 y 100.")
-        except ValueError:
-            print("Por favor ingrese solo numeros enteros.")
+                print('Ingresa solo numeros entre 1 y 100.')
+                input('Presiona Enter para continuar...')
+                limpiar()
+        except:
+            print('Por favor ingresar solo numeros.')
+            input('Presiona Enter para continuar...')
+            limpiar()
 
-def play_game():
-    """Main function to play the game"""
-    clear_screen()
-    print("Bienvenido al juego de adivina el numero!")
-    ramdom_number = get_ramdom_number()
-    attempts = 0 
-    
-    
+def game(num_alea, vidas):
+    while vidas > 0:
+        num_usu = numero_usuario()
+        if num_usu == num_alea:
+            print('Felicidades haz ganado.')
+            input('Presiona Enter para continuar...')
+            return
+        elif num_usu < num_alea:
+            print(f'El numero es mayor a {num_usu}')
+        else:
+            print(f'El numero es menor a {num_usu}')
+        vidas -= 1
+        print(f'Te quedan {vidas} vidas.')
+        input('Presiona Enter para continuar...')
+        limpiar()
+    print(f'Perdiste. El número era {num_alea}')
+
+if __name__ == '__main__':
+    game(numero_random(), intentos())
